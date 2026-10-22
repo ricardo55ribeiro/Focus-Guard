@@ -1,0 +1,28 @@
+{
+  "session_check_interval_seconds": 20,
+  "background_check_interval_seconds": 60,
+  "warning_duration_seconds": 15,
+  "background_instructions": [],
+  "always_block_domains": [
+    "twitter.com",
+    "x.com",
+    "reddit.com",
+    "discord.com",
+    "instagram.com",
+    "facebook.com",
+    "tiktok.com",
+    "chess.com",
+    "twitch.tv"
+  ],
+  "always_allow_domains": [
+    "github.com",
+    "stackoverflow.com",
+    "docs.python.org"
+  ],
+  "always_block_processes": [
+    "steam.exe",
+    "epicgameslauncher.exe",
+    "leagueclient.exe",
+    "bluestacks.exe"
+  ]
+}

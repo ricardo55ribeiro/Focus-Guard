@@ -1,0 +1,50 @@
+FocusGuard Privacy Policy
+Updated: 2026-10-22
+
+Collection and processing
+The enabled browser extension reads the active tab's full URL and title on tab
+activation and page-load events, and attempts to send them to the FocusGuard
+desktop application at http://localhost:9001. This can happen outside a study
+session while the desktop server is running. Disable the extension to stop
+browser capture. Internal browser and extension pages are skipped.
+
+The desktop app reads the foreground application's process name and window
+title. During monitoring it applies your lists, study goal, and background
+rules. AI requests go to Ollama on 127.0.0.1:11434 with local model names.
+FocusGuard does not take screenshots or include analytics or telemetry.
+
+Storage and retention
+Session history in agent/logs/ contains full URLs, page titles, timestamps,
+process names, classification scores and reasons, and block events. Console
+output may also contain goals, window titles and URLs. Redirected console
+output and any debug files can retain these details. Personal settings and
+background rules are stored in agent/config/settings.json.
+
+The extension uses browser local storage (chrome.storage.local) to retain the
+most recently blocked URL, title, and reason for its block page. This record
+persists until overwritten or cleared. It is not a full browsing history.
+
+FocusGuard does not encrypt these records or automatically expire them. URLs
+may contain account identifiers, private document paths, or access tokens.
+Other users or software with access to your files/browser profile may read
+them. OS backups, browser features and separately configured Ollama software
+may retain additional information.
+
+Network access
+Activity classification is local. FocusGuard's AI client ignores remote host
+and HTTP proxy environment settings. Installation downloads Python packages,
+Ollama and models from their distributors. Opening the add-on store and browser
+extension updates also require internet access. Those services have their own
+policies. FocusGuard does not upload activity logs to the project maintainer.
+
+Deletion and control
+Stop FocusGuard before deleting session files in agent/logs/ and saved console
+or debug output. To erase settings, delete agent/config/settings.json; rerun
+setup before using the application again. Clear the extension's local data in
+your browser or remove the extension to erase its stored block record. Disable
+Windows startup in Settings to stop automatic launches. Manage Ollama's data
+and backups separately. Do not attach unredacted logs to public GitHub issues.
+
+Questions
+Use the repository's issue tracker for general privacy questions without
+including personal activity. Follow SECURITY.md for vulnerability reports.
