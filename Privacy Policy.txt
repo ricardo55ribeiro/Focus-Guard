@@ -1,52 +1,63 @@
 FocusGuard Privacy Policy
 Updated: 2026-10-23
 
-Collection and processing
-The enabled browser extension reads the active tab's full URL and title on tab
-activation and page-load events, and attempts to send them to the FocusGuard
-desktop application at http://localhost:9001. This can happen outside a study
-session while the desktop server is running. Disable the extension to stop
-browser capture. Internal browser and extension pages are skipped.
+What FocusGuard reads
 
-The desktop app reads the foreground application's process name and window
-title. During monitoring it applies your lists, study goal, and background
-rules. AI requests go to Ollama on 127.0.0.1:11434 with local model names.
-FocusGuard does not take screenshots or include analytics or telemetry.
+The desktop app reads the name and window title of the app you're using. The
+browser extension reads your active tab's full URL and title when you switch
+tabs or a page finishes loading. It skips internal browser and extension pages.
 
-Storage and retention
-Session history in agent/logs/ contains full URLs, page titles, timestamps,
-process names, classification scores and reasons, and block events. Console
-output may also contain goals, window titles and URLs. Redirected console
-output and any debug files can retain these details. Personal settings and
-background rules are stored in agent/config/settings.json.
+The extension sends this information to FocusGuard on your computer at
+http://localhost:9001. It can do this outside a study session if the desktop
+server is still running. Disable the extension to stop it reading your tabs.
 
-The extension uses browser local storage (chrome.storage.local) to retain the
-most recently blocked URL, title, and reason for its block page. This record
-persists until overwritten or cleared. It is not a full browsing history.
+FocusGuard checks this activity against your goal and rules. AI requests go to
+local Ollama at 127.0.0.1:11434. There are no screenshots, analytics or telemetry.
 
-FocusGuard does not encrypt these records or automatically expire them. URLs
-may contain account identifiers, private document paths, or access tokens.
-Other users or software with access to your files/browser profile may read
-them. OS backups, browser features and separately configured Ollama software
-may retain additional information.
+What's saved on your computer
 
-Network access
-Activity classification is local. FocusGuard's AI client ignores remote host
-and HTTP proxy environment settings. Installation downloads Python packages,
-Ollama and models from their distributors. Opening the add-on store and browser
-extension updates also require internet access. Those services have their own
-policies. FocusGuard does not upload activity logs to the project maintainer.
+Session history is saved in agent/logs/. These files contain full URLs, page
+titles, timestamps and process names, along with classification scores and
+reasons. They also record when an activity was blocked. Settings and background
+rules are saved in agent/config/settings.json. Console output can also include
+your goals, window titles and URLs, so saving that output creates another copy
+of those details.
 
-Deletion and control
-Stop FocusGuard before deleting session files in agent/logs/ and saved console
-or debug output. To erase settings, delete agent/config/settings.json; rerun
-setup before using the application again. Clear the extension's local data in
-your browser or remove the extension to erase its stored block record. Disable
-Windows startup in Settings to stop automatic launches. Manage Ollama's data
-and backups separately. Do not attach unredacted logs to public GitHub issues.
+The extension keeps the latest blocked URL, title and reason in your browser's
+local extension storage. It uses this to display the block page. The record
+stays there until another block replaces it or you clear it.
 
-Questions
-Use the repository's issue tracker for general privacy questions without
-including personal activity. For vulnerabilities, use GitHub's private
-"Report a vulnerability" option when available. Otherwise, ask for a private
-contact channel without posting exploit details or personal data.
+These records aren't encrypted by FocusGuard and aren't deleted automatically.
+URLs can contain private document paths, account details or access tokens.
+Anyone with access to the relevant files or browser profile may be able to read
+them. Your backups, browser and Ollama installation may keep their own copies
+or records, which you'll need to manage separately.
+
+When an internet connection is used
+
+Setup downloads Python packages, Ollama and the models. Visiting the add-on
+store and downloading extension updates also use the internet. Those services
+have their own privacy policies.
+
+Activity classification happens locally. FocusGuard's AI client ignores remote
+Ollama host and HTTP proxy environment settings. FocusGuard doesn't upload your
+activity logs to the project maintainer.
+
+Deleting your data
+
+Exit FocusGuard through its tray menu before deleting the files in agent/logs/
+and any console or debug output you've saved. To reset your settings, delete
+agent/config/settings.json and run setup again before using the app.
+
+Clear the extension's data in your browser or uninstall it to remove the saved
+block record. You can turn off automatic launches in FocusGuard's Settings.
+Deleting FocusGuard's files doesn't remove copies in backups or Ollama's data.
+
+Questions or concerns
+
+You can ask general privacy questions in the GitHub issue tracker. Please leave
+out personal activity and remove private details from any logs you share.
+
+For a security issue, use GitHub's private "Report a vulnerability" option if
+it's available. Otherwise, ask for a private contact channel without posting
+exploit details or personal data.

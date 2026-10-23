@@ -14,20 +14,20 @@ You'll need **Windows 10 or 11 (64-bit)** and **Python 3.11+**. Allow about **10
 2. Download and extract this repository, or clone it:
 
    ```powershell
-   git clone https://github.com/ricardo55ribeiro/focus-guard.git
-   cd focus-guard
+   git clone https://github.com/ricardo55ribeiro/Focus-Guard.git
+   cd Focus-Guard
    ```
 
 3. Double-click **install.bat**. It installs the Python packages, sets up Ollama, downloads the models and creates a desktop shortcut. Follow any Ollama installer prompts; the downloads can take a while.
 4. Install the browser extension:
-   - **Firefox:** use the [Firefox add-on](https://addons.mozilla.org/addon/focus_guard_ai/). To try the version in this repository, open `about:debugging`, choose **This Firefox → Load Temporary Add-on**, and select `extension/manifest.json`. Temporary add-ons disappear when Firefox restarts.
-   - **Chrome, Brave or Edge:** open your browser's extensions page, enable **Developer mode**, select **Load unpacked**, and choose the `extension` folder.
+   - **Firefox:** use the [Firefox add-on](https://addons.mozilla.org/addon/focus_guard_ai/). To try the version in this repository, open `about:debugging`, choose **This Firefox → Load Temporary Add-on** and select `extension/manifest.json`. Temporary add-ons disappear when Firefox restarts.
+   - **Chrome, Brave or Edge:** open your browser's extensions page (`chrome://extensions`, `brave://extensions` or `edge://extensions`), enable **Developer mode**, select **Load unpacked** and choose the `extension` folder.
 
 ## Using it
 
-Once installed, open FocusGuard from the desktop shortcut, enter a specific goal and click **Start Session**. The window hides while monitoring runs. Click the tray icon to bring it back, or right-click it to stop the session.
+Once installed, open FocusGuard from the desktop shortcut, enter a specific goal and click **Start Session**. The window hides while monitoring runs. Click the tray icon to bring it back. To exit, right-click the icon and choose **Stop Session**, or **Quit FocusGuard** in background mode. Closing the window while monitoring only hides it.
 
-In **Settings**, you can block particular sites or apps, allow trusted domains, and adjust how often activity is checked. There's also a background mode for enforcing your lists and optional rules outside a study session, with an option to launch it when Windows starts. **View History** shows past sessions and their focus statistics.
+In **Settings**, you can block particular sites or apps, allow trusted domains and adjust how often activity is checked. Background mode applies your lists and optional rules outside a study session. You can also set it to start with Windows. **View History** shows past sessions and their focus statistics.
 
 The AI can get things wrong. The block page has an **I was actually studying this** button to add a site's domain to your allow list; explicit block rules still take priority.
 
@@ -46,7 +46,7 @@ If browser activity isn't showing up, check that the extension is enabled and ha
 
 ## Working on the code
 
-The desktop app is in `agent/`, the browser extension in `extension/`, and setup is handled by `install.py`. Explicit block/allow rules are checked first; other activity goes to Qwen2.5 3B, while the 7B model writes the reminders and pledges.
+The monitoring loop is in `agent/monitor.py`, the desktop UI in `agent/ui.py` and the browser integration in `extension/`. During a session, block and allow rules are checked first. Qwen2.5 3B classifies other activity; the 7B model writes reminders and pledges.
 
 After installing the dependencies, run the tests from the project folder (the extension tests need Node.js):
 

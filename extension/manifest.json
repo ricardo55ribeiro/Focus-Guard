@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "FocusGuard",
   "version": "0.1.1",
-  "description": "AI-powered focus enforcement. Works with the FocusGuard desktop app to monitor your active browser tab and enforce your study sessions.",
+  "description": "Shares your active tab's URL and title with the local FocusGuard desktop app to help detect distractions.",
   "icons": {
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
