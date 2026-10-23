@@ -1,5 +1,5 @@
 FocusGuard Privacy Policy
-Updated: 2026-10-22
+Updated: 2026-10-23
 
 Collection and processing
 The enabled browser extension reads the active tab's full URL and title on tab
@@ -47,4 +47,6 @@ and backups separately. Do not attach unredacted logs to public GitHub issues.
 
 Questions
 Use the repository's issue tracker for general privacy questions without
-including personal activity. Follow SECURITY.md for vulnerability reports.
+including personal activity. For vulnerabilities, use GitHub's private
+"Report a vulnerability" option when available. Otherwise, ask for a private
+contact channel without posting exploit details or personal data.

@@ -1,5 +1,9 @@
 # Tested on Windows with Python 3.12. Update together and run pip-audit.
 # Runtime dependencies (including transitive dependencies).
+# Models downloaded by install.py have separate terms:
+# qwen2.5:3b - Qwen Research License (restrictions on commercial use).
+# https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/blob/main/LICENSE
+# qwen2.5:7b - Apache-2.0: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/blob/main/LICENSE
 annotated-types==0.8.0
 anyio==4.15.1
 certifi==2026.10.19

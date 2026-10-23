@@ -10,7 +10,7 @@ import shutil
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = (
     ".gitignore", ".gitattributes", "LICENSE", "README.md", "Privacy Policy.txt",
-    "SECURITY.md", "CONTRIBUTING.md", "THIRD_PARTY.md", "requirements.txt",
+    "requirements.txt",
     "settings.example.json", "install.py", "install.bat", "create_shortcut.bat",
     "create_shortcut.ps1", "launch_focusguard.vbs",
 )
