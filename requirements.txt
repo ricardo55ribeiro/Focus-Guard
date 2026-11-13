@@ -14,10 +14,10 @@ idna==3.20
 ollama==0.6.3
 pillow==13.0.0
 psutil==7.2.2
-pydantic==2.14.2
-pydantic_core==2.50.2
+pydantic==2.14.3
+pydantic_core==2.50.4
 pystray==0.19.5
 pywin32==312
 six==1.17.0
-typing-inspection==0.4.4
+typing-inspection==0.4.5
 typing_extensions==4.16.0
